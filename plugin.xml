@@ -19,33 +19,6 @@
         <clobbers target="CanvasCamera" />
     </js-module>
 
-    <platform name="ios">
-
-      <config-file parent="/*" target="config.xml">
-        <feature name="CanvasCamera">
-          <param name="ios-package" value="CanvasCamera" />
-          <param name="onload" value="true" />
-        </feature>
-      </config-file>
-
-      <preference name="CAMERA_USAGE_DESCRIPTION" default="Display video preview" />
-      <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
-          <string>$CAMERA_USAGE_DESCRIPTION</string>
-      </config-file>
-
-      <header-file src="src/ios/CanvasCamera.h" />
-      <source-file src="src/ios/CanvasCamera.m" />
-
-      <framework src="AssetsLibrary.framework" weak="true" />
-      <framework src="ImageIO.framework" weak="true" />
-      <framework src="CoreImage.framework" weak="true" />
-      <framework src="CoreVideo.framework" weak="true" />
-      <framework src="CoreMedia.framework" weak="true" />
-      <framework src="CoreGraphics.framework" weak="true" />
-      <framework src="MobileCoreServices.framework" weak="true" />
-
-    </platform>
-
     <platform name="android">
 
       <config-file parent="/*" target="res/xml/config.xml">
@@ -56,8 +29,6 @@
       </config-file>
 
       <config-file parent="/manifest" target="AndroidManifest.xml">
-        <uses-feature android:name="android.hardware.camera"/>
-
         <uses-permission android:name="android.permission.CAMERA" />
         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
